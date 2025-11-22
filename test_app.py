@@ -1,5 +1,5 @@
 import pytest
-from flask_app.app import app as flask_app  # Import the app instance
+from app import app as flask_app  
 
 @pytest.fixture
 def app():

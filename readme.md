@@ -59,10 +59,9 @@ flask init-db
 
 - Start the development server: `flask run`
 
-
 You should see output similar to:
 
- 
+ ![alt text](image-1.png)
 
  (Press CTRL+C to quit)
 
@@ -73,7 +72,8 @@ Open your web browser and navigate to:
 
 http://127.0.0.1:5000
 
-Running Tests
+![alt text](image.png)
+## Running Tests
 
 To run the unit tests included with the application:
 

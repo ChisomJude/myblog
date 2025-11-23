@@ -8,6 +8,7 @@ DATABASE = 'blog.db'
 app = Flask(__name__)
 app.config['DATABASE'] = DATABASE
 
+
 def get_db():
     """Connects to the specific database."""
     if 'db' not in g:
@@ -18,11 +19,13 @@ def get_db():
         g.db.row_factory = sqlite3.Row
     return g.db
 
+
 def close_db(e=None):
     """Closes the database connection."""
     db = g.pop('db', None)
     if db is not None:
         db.close()
+
 
 def init_db():
     """Initializes the database from the schema."""
@@ -44,7 +47,7 @@ app.teardown_appcontext(close_db)
 @app.route('/')
 def index():
     """Show all blog posts."""
-    db = get_db()
+    db = get_db(xxx) #manually added an error for testing
     posts = db.execute(
         'SELECT title, body, created FROM posts ORDER BY created DESC'
     ).fetchall()

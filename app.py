@@ -47,7 +47,8 @@ app.teardown_appcontext(close_db)
 @app.route('/')
 def index():
     """Show all blog posts."""
-    db = get_db(xxx) #manually added an error for testing
+    #db = get_db(xxx) #manually added an error for testing
+    db = get_db()
     posts = db.execute(
         'SELECT title, body, created FROM posts ORDER BY created DESC'
     ).fetchall()
